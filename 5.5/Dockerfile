@@ -13,9 +13,9 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 ENV SOLR_USER="solr" \
-    SOLR_UID="8983" \
+    SOLR_UID="1983" \
     SOLR_GROUP="solr" \
-    SOLR_GID="8983" \
+    SOLR_GID="1983" \
     SOLR_VERSION="5.5.5" \
     SOLR_URL="${SOLR_DOWNLOAD_SERVER:-https://archive.apache.org/dist/lucene/solr}/5.5.5/solr-5.5.5.tgz" \
     SOLR_SHA256="2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1" \
@@ -77,7 +77,7 @@ RUN set -e; \
 
 COPY --chown=solr:solr scripts /opt/docker-solr/scripts
 
-EXPOSE 8983
+EXPOSE 1983
 WORKDIR /opt/solr
 USER $SOLR_USER
 
